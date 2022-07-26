@@ -1,0 +1,92 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #35667C;  for desktop and will be in media query*/
+    background-color: #35667C;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #4A2409;
+    color: #fff;
+    background-image: linear-gradient(rgba(88, 37, 1, 0.841), rgba(88, 37, 1, 0.1)), url(img/header-photo.png);
+    background-size: cover;
+    background-position: right center;
+    border-radius: 11px;
+    margin: 0 10px;
+}
+
+header a {
+    padding-top: 30px;
+}
+
+/* header nav {
+    display: flex;
+} */
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.left-side {
+    padding-top: 15px;
+}
+
+.right-side {
+    padding-top: 32px;
+}
+
+header nav li {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+header nav li:first-child {
+    padding-left: 40px;
+    margin-right: auto;
+}
+
+header nav li:last-child {
+    margin-right: 40px;
+}
+
+header nav li:not(:last-child) {
+    padding-right: 30px;
+}
+
+header nav li a {
+    color: #fff;
+}
+
+header h1 {
+    font-size: 47px;
+    line-height: 45px;
+    text-align: center;
+    padding: 18% 0;
+}
+
+#wrapper {
+    max-width: 1320px;
+    max-height: 100%;
+    margin: 15px 60px;
+    padding-top: 15px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.intro {
+    text-align: center;
+    margin: 80px auto;
+}
+
+.intro img {
+    width: 42px;
+}
