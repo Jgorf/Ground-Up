@@ -8,7 +8,14 @@ body {
     /* background-color: #35667C;  for desktop and will be in media query*/
     background-color: #35667C;
 }
-
+:root {
+    --font: 'Nunito', sans-serif;
+    --normal-weight: 400;
+    --semi-bold: 600;
+    --bold: 700;
+    --extra-bold: 800;
+    --black-weight: 900;
+}
 a {
     text-decoration: none;
 }
@@ -64,10 +71,14 @@ header nav li:not(:last-child) {
 
 header nav li a {
     color: #fff;
+    font-family: var(--font);
+    font-weight: var(--normal-weight);
 }
 
 header h1 {
     font-size: 47px;
+    font-family: var(--font);
+    font-weight: var(--black-weight);
     line-height: 45px;
     text-align: center;
     padding: 18% 0;
@@ -88,10 +99,138 @@ header h1 {
 }
 .intro h2 {
     font-size: 40px;
+    font-family: var(--font);
+    font-weight: var(--black-weight);
+    color: #6B350E;
 }
 .intro .time {
     font-size: 38px;
+    font-weight: var(--semi-bold);
 }
 .intro p {
     font-size: 25px;
+    font-family: var(--font);
+    font-weight: var(--semi-bold);
+    color: #6B350E;
+    text-transform: uppercase;
+}
+main {
+    margin: 0 134px;
+}
+.topSec, .endSec {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 2fr;
+    padding-bottom: 80px;
+}
+.topSec p, .topSec h2, .endSec p, .endSec h2 {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+}
+.topSec p, .endSec p {
+    padding-top: 10px;
+    line-height: 30px;
+}
+.topSec h2, .endSec h2{
+    line-height: 40px;
+}
+.midSec {
+    display: grid;
+    gap: 50px;
+    grid-template-areas: 
+        "h2 img";
+    padding-bottom: 80px;
+}
+.midSec h2 {
+    grid-area: h2;
+}
+.midSec p {
+    grid-area: h2;
+    padding-top: 10px;
+}
+.midSec img {
+    grid-area: img;
+}
+.topSec h2, .midSec h2, .endSec h2 {
+    color: #6B350E;
+    font-weight: var(--bold);
+    font-family: var(--font);
+    font-size: 36px;
+    line-height: 40px;
+}
+.topSec p, .midSec p, .endSec p {
+    color: #6B350E;
+    font-family: var(--font);
+    font-weight: var(--normal-weight);
+    font-size: 22px;
+    line-height: 30px;
+}
+section img {
+    max-width: 100%;
+    border-radius: 20px;
+}
+.img-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section-logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80.5px;
+}
+#menuDiv {
+    display: grid;
+    grid-template-areas: "drink food";
+    gap: 44px;
+}
+.drinkLink {
+    background-image: url(img/drink-menu.png);
+    background-size: cover;
+    background-position: center;
+    margin-left: 134px;
+    /* top: 50%; */
+}
+.drink-menu {
+    display: flex;
+    justify-content: center;
+    grid-area: drink;
+    
+}
+#menuDiv a {
+   border-radius: 20px;
+}
+.foodLink {
+    background-image: url(img/food-menu.png);
+    background-position: center;
+    background-size: cover;
+    margin-right: 134px;
+    /* top: 50%; */
+}
+.food-menu {
+    display: flex;
+    justify-content: center;
+    grid-area: food;
+}
+.drink-menu, .food-menu {
+    padding: 17vw 0 0.75vw;
+    color: #FFFFFF;
+    font-family: var(--font);
+    font-weight: var(--black-weight);
+    font-size: 1.9vw;
+    line-height: 49px;
+}
+
+@media (max-width:1300px) {
+    .topSec h2, .midSec h2, .endSec h2 {
+       font-size: 2.5vw;
+    }
+    .topSec p, .midSec p, .endSec p {
+        font-size: 1.5vw;
+     }
 }
