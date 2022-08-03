@@ -15,6 +15,7 @@ body {
     --bold: 700;
     --extra-bold: 800;
     --black-weight: 900;
+    font-size: 1rem;
 }
 a {
     text-decoration: none;
@@ -155,29 +156,23 @@ main {
     color: #6B350E;
     font-weight: var(--bold);
     font-family: var(--font);
-    font-size: 36px;
+    font-size: 2.25rem;
     line-height: 40px;
 }
 .topSec p, .midSec p, .endSec p {
     color: #6B350E;
     font-family: var(--font);
     font-weight: var(--normal-weight);
-    font-size: 22px;
+    font-size: 1.4rem;
     line-height: 30px;
 }
 section img {
     max-width: 100%;
     border-radius: 20px;
-}
-.img-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-self: center;
 }
 .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-self: center;
 }
 .section-logo {
     display: flex;
@@ -226,11 +221,23 @@ section img {
     line-height: 49px;
 }
 
-@media (max-width:1300px) {
+
+
+@media (min-width:601px) and (max-width:900px) {  /* between 601px and 900px */
     .topSec h2, .midSec h2, .endSec h2 {
-       font-size: 2.5vw;
+        color: red;
+     }
+}
+@media (max-width:1300px) {   /* 1300px or less */
+    .topSec h2, .midSec h2, .endSec h2 {
+       font-size: 2rem;
     }
     .topSec p, .midSec p, .endSec p {
-        font-size: 1.5vw;
+        font-size: 1.22rem;
+     }
+}
+@media (max-width:600px) {  /* 600px and lower */
+    .topSec h2, .midSec h2, .endSec h2 {
+        color: blue;
      }
 }
