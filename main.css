@@ -249,4 +249,7 @@ section img {
      .topSec p, .midSec p, .endSec p {
         color: blue;
      }
+     .right-side {
+        display: inline-block;
+     }
 }
