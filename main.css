@@ -20,7 +20,9 @@ body {
 a {
     text-decoration: none;
 }
-
+ul {
+    list-style-type: none;
+}
 header {
     background-color: #4A2409;
     color: #fff;
@@ -41,7 +43,7 @@ header a {
 
 header nav ul {
     display: flex;
-    list-style-type: none;
+    
 }
 
 .left-side {
@@ -128,13 +130,7 @@ main {
     grid-column: 2 / -1;
     grid-row: 1 / -1;
 }
-.topSec p, .endSec p {
-    padding-top: 10px;
-    line-height: 30px;
-}
-.topSec h2, .endSec h2{
-    line-height: 40px;
-}
+
 .midSec {
     display: grid;
     gap: 50px;
@@ -147,7 +143,7 @@ main {
 }
 .midSec p {
     grid-area: h2;
-    padding-top: 10px;
+    
 }
 .midSec img {
     grid-area: img;
@@ -165,6 +161,7 @@ main {
     font-weight: var(--normal-weight);
     font-size: 1.4rem;
     line-height: 30px;
+    padding-top: 10px;
 }
 section img {
     max-width: 100%;
@@ -180,45 +177,55 @@ section img {
     padding-bottom: 80.5px;
 }
 #menuDiv {
-    display: grid;
-    grid-template-areas: "drink food";
+    max-width: 100%;
+    padding-bottom: 80px;
+}
+.menu-wrapper {
+    display: flex;
+    justify-content: center;
     gap: 44px;
+    margin: 0 24px;
 }
 .drinkLink {
     background-image: url(img/drink-menu.png);
     background-size: cover;
     background-position: center;
-    margin-left: 134px;
     /* top: 50%; */
 }
-.drink-menu {
+/* .drink-menu {
     display: flex;
     justify-content: center;
-    grid-area: drink;
     
-}
+} */
 #menuDiv a {
    border-radius: 20px;
+   overflow-x: auto;
+
 }
 .foodLink {
     background-image: url(img/food-menu.png);
     background-position: center;
     background-size: cover;
-    margin-right: 134px;
     /* top: 50%; */
+}
+.drink-menu {
+    display: flex;
+    justify-content: center;
 }
 .food-menu {
     display: flex;
     justify-content: center;
-    grid-area: food;
+
 }
 .drink-menu, .food-menu {
-    padding: 17vw 0 0.75vw;
+    padding: 17.75rem 9.4rem .535rem;  
     color: #FFFFFF;
     font-family: var(--font);
     font-weight: var(--black-weight);
-    font-size: 1.9vw;
+    font-size: 36px;
     line-height: 49px;
+    white-space: nowrap;
+    overflow-x: hidden;
 }
 
 
@@ -226,23 +233,33 @@ section img {
 
 @media (max-width:1300px) {   /* 1300px or less */
     .topSec h2, .midSec h2, .endSec h2 {
-       font-size: 2rem;
+       font-size: 1.75rem;
     }
     .topSec p, .midSec p, .endSec p {
-        font-size: 1.22rem;
+        font-size: 1.25rem;
+        padding-top: 5px;
+        line-height: normal;
      }
 }
-@media (min-width:601px) and (max-width:900px) {  /* between 601px and 900px */
+@media (min-width:651px) and (max-width:950px) {  /* between 651px and 900px */
     .topSec h2, .midSec h2, .endSec h2 {
         color: red;
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 1.5vw + 0.5rem, 1.4rem);
+        line-height: normal;
      }
      .topSec p, .midSec p, .endSec p {
         color: red;
-        font-size: 1rem;
+        font-size: clamp(.85rem, 1vw + .5rem, 1.2rem);
+        line-height: normal;
+     }
+     .feature {
+        grid-template-columns: 1fr 1fr;
+     }
+     .drink-menu, .food-menu {
+        font-size: 25px;
      }
 }
-@media (max-width:600px) {  /* 600px and lower */
+@media (max-width:650px) {  /* 650px and lower */
     .topSec h2, .midSec h2, .endSec h2 {
         color: blue;
      }
@@ -252,4 +269,8 @@ section img {
      .right-side {
         display: inline-block;
      }
+     .topSec, .midSec, .endSec {
+        display: block;
+     }
+
 }
