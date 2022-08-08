@@ -5,7 +5,6 @@
 }
 
 body {
-    /* background-color: #35667C;  for desktop and will be in media query*/
     background-color: #35667C;
 	margin: 1% 4%;
 }
@@ -16,6 +15,7 @@ body {
     --bold: 700;
     --extra-bold: 800;
     --black-weight: 900;
+	--text-color: #6B350E;
     font-size: 1rem;
 }
 a {
@@ -33,15 +33,9 @@ header {
     border-radius: 11px;
     margin: 0 10px 0;
 }
-
 header a {
     padding-top: 30px;
 }
-
-/* header nav {
-    display: flex;
-} */
-
 header nav ul {
     display: flex;
     
@@ -57,16 +51,17 @@ header nav ul {
 }
 
 
-header nav li:first-child {
+header nav .left-side {
     padding-left: 40px;
-    margin-right: auto;
+    padding-right: 0;
+	margin-right: auto;
 }
 
 header nav li:last-child {
     margin-right: 40px;
 }
 
-header nav li:not(:last-child) {
+.right-side:not(:last-child) {
     padding-right: 30px;
 }
 
@@ -105,8 +100,7 @@ header h1 {
     font-size: 40px;
     font-family: var(--font);
     font-weight: var(--black-weight);
-    color: #6B350E;
-	padding: 0 2.5%;
+    color: var(--text-color);
 	line-height: 55px;
 }
 .intro .time {
@@ -125,7 +119,7 @@ header h1 {
 main {
     margin: 0 134px;
 }
-.topSec, .endSec {
+main section:not(.midSec) {
     display: grid;
     gap: 50px;
     grid-template-columns: 300px 1fr;
@@ -135,8 +129,10 @@ main {
     grid-column: 2 / -1;
     grid-row: 1 / -1;
 }
-
-.midSec {
+.text {
+	align-self: center;
+}
+section:nth-of-type(2) {
     display: grid;
     gap: 50px;
     grid-template-areas: 
@@ -155,7 +151,7 @@ main {
     grid-area: img;
 }
 .topSec h2, .midSec h2, .endSec h2 {
-    color: #6B350E;
+    color: var(--text-color);
     font-weight: var(--bold);
     font-family: var(--font);
     font-size: 2.25rem;
@@ -174,23 +170,27 @@ section img {
     border-radius: 20px;
     align-self: center;
 }
-.text {
-    align-self: center;
-}
 .section-logo {
     display: flex;
     justify-content: center;
     padding-bottom: 80.5px;
 }
-#menuDiv {
-    max-width: 100%;
-    padding-bottom: 80px;
-}
 .menu-wrapper {
     display: flex;
     justify-content: center;
     gap: 44px;
+	padding-bottom: 80px;
 }
+.menu-wrapper a {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	border-radius: 20px;
+	overflow-x: hidden;
+	aspect-ratio: 502 / 390;
+	width: 390px;
+ 
+ }
 .drinkLink {
     background-image: url(img/drink-menu.png);
     background-size: cover;
@@ -202,16 +202,7 @@ section img {
     justify-content: center;
     
 } */
-#menuDiv a {
-   display: flex;
-   justify-content: center;
-   align-items: flex-end;
-   border-radius: 20px;
-   overflow-x: hidden;
-   aspect-ratio: 502 / 390;
-   width: 390px;
 
-}
 .foodLink {
     background-image: url(img/food-menu.png);
     background-position: center;
@@ -229,8 +220,45 @@ section img {
     
 }
 
-
-
+footer {
+	border-top: 2px solid #6B350E66;
+	padding-top: 2.5rem;
+}
+footer div {
+	font-family: var(--font);
+	color: var(--text-color);
+	display: grid;
+	grid-template-areas: "phoneNum address    email"
+						 ".        social     .    "
+						 ".        copyright  .    ";
+	justify-items: center;
+	gap: 30px;
+	margin: 0 10px;
+}
+footer p:not(#copyright) {
+	font-size: 1.57rem;
+}
+#address {
+	font-weight: var(--extra-bold);
+	grid-area: address;
+}
+#copyright {
+	font-size: .88rem;
+	grid-area: copyright;
+	padding-bottom: 15px;
+}
+#phone-number {
+	grid-area: phoneNum;
+}
+#email {
+	grid-area: email;
+}
+.socials {
+	grid-area: social;
+}
+.socials a:not(:last-child) {
+	padding-right: 15px;
+}
 
 @media (max-width:1300px) {   /* 1300px or less */
     .topSec h2, .midSec h2, .endSec h2 {
@@ -242,12 +270,15 @@ section img {
         line-height: normal;
      }
 }
-@media (min-width:776px) and (max-width:950px) {  /* between 775px and 900px */
-	.topSec, .endSec {
-		grid-template-columns: 200px 1fr;
+@media (min-width:786px) and (max-width:950px) {  /* between 786px and 950px */
+	main {
+		margin: 0 90px;
 	}
-	.midSec {
-		grid-template-columns: 1fr 200px;
+	main section:not(.midSec) {
+		grid-template-columns: 250px 1fr;
+	}
+	section:nth-of-type(2) {
+		grid-template-columns: 1fr 250px;
 	}
     .topSec h2, .midSec h2, .endSec h2 {
         color: red;
@@ -263,8 +294,11 @@ section img {
      .drink-menu, .food-menu {
         font-size: 25px;
      }
+	 footer p:not(#copyright) {
+		font-size: 1.3rem;
+	 }
 }
-@media (max-width:775px) {  /* 775px and lower */
+@media (max-width:785px) {  /* 785px and lower */
 	body {
 		background-color: #fff;
 		margin: 0;
@@ -273,7 +307,7 @@ section img {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		margin: 0 3%;
+		margin: 0 1.5rem;
 	}
 	#menuDiv {
 		display: flex;
@@ -301,6 +335,7 @@ section img {
 		font-size: 1.15rem;
 		line-height: 26px;
      }
+    
 	 header {
 		margin: 0;
 		border-radius: 0;
@@ -315,13 +350,45 @@ section img {
 	header nav li:last-child {
 		margin-right: 0;
 	}
-     .topSec, .midSec, .endSec {
-        display: block;
+	header nav .left-side {
+		padding-left: 0;
+	}
+    main section {
+        display: block !important;
      }
 	 .menu-wrapper {
 		flex-direction: column;
-	 }
+		align-items: center;
+	}
 
+	section {
+		text-align: center;
+	}
+	section .text :last-child {
+		text-align: left;
+	}
+	.text {   /* remove later just for test */
+		color: red;
+		/* text-align: left; */
+	}
+	footer div {
+		display: block;
+		text-align: center;
+	}
+	footer p:not(#copyright) {
+		font-size: 1.38rem;
+	}
+	.socials {
+		padding: 1.88rem 0;
+	}
+	#address, #phone-number {
+		padding-bottom: 10px;
+	}
 
-
+}
+@media (max-width:500px) {
+	section .text h2 {
+		text-align: left;
+		font-size: 1.6rem;
+	}
 }
