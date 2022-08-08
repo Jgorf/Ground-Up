@@ -367,10 +367,6 @@ footer p:not(#copyright) {
 	section .text :last-child {
 		text-align: left;
 	}
-	.text {   /* remove later just for test */
-		color: red;
-		/* text-align: left; */
-	}
 	footer div {
 		display: block;
 		text-align: center;
