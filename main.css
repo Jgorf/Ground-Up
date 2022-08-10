@@ -246,6 +246,12 @@ footer p:not(#copyright) {
 .socials {
 	grid-area: social;
 }
+.socials svg {
+	fill: #6B350E;
+}
+.socials svg:hover {
+	fill: #000;
+}
 .socials a:not(:last-child) {
 	padding-right: 15px;
 }
