@@ -250,7 +250,7 @@ footer p:not(#copyright) {
 	fill: #6B350E;
 }
 .socials svg:hover {
-	fill: #000;
+	fill: #503a2b;
 }
 .socials a:not(:last-child) {
 	padding-right: 15px;
