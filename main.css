@@ -7,6 +7,7 @@
 body {
     background-color: #35667C;
 	margin: 1% 4%;
+	overflow-x: hidden;
 }
 :root {
     --font: 'Nunito', sans-serif;
@@ -17,6 +18,8 @@ body {
     --black-weight: 900;
 	--text-color: #6B350E;
     font-size: 1rem;
+	--slide-speed: 1s;
+	--fade-speed: 2s;
 }
 a {
     text-decoration: none;
@@ -37,7 +40,7 @@ header > div {
 	display: none;
 }
 header a {
-    padding-top: 30px;
+    padding-top: 25px;
 }
 header nav ul {
     display: flex;
@@ -76,13 +79,14 @@ header nav li a {
 header nav li a:hover {
 	color: #f7e1a4;
 }
-header h1 {
+header p {
     font-size: 2.95rem;
     font-family: var(--font);
     font-weight: var(--black-weight);
     line-height: 45px;
     text-align: center;
     padding: 18% 2.5%;
+	text-shadow: 0 6px #4A2409;
 }
 
 #wrapper {
@@ -98,25 +102,28 @@ main > div:first-of-type {
     text-align: center;
     margin: 80px auto;
 }
-main > div:first-of-type h2 {
+main > div:first-of-type h1, main > div:first-of-type p:last-of-type {
     font-size: 2.5rem;
     font-family: var(--font);
     font-weight: var(--black-weight);
     color: var(--text-color);
 	line-height: 55px;
 }
-main > div:first-of-type h2:last-of-type {
+main > div:first-of-type p:last-of-type {
     font-size: 2.38rem;
 	line-height: 51.83px;
     font-weight: var(--semi-bold);
 }
-main > div:first-of-type p {
+main > div:first-of-type p:not(:last-of-type) {
     font-size: 1.56rem;
     font-family: var(--font);
     font-weight: var(--semi-bold);
     color: #6B350E;
     text-transform: uppercase;
 	line-height: 34.1px;
+}
+main > div:first-of-type img {
+	margin: 8px 0;
 }
 main {
     margin: 0 134px;
@@ -200,8 +207,7 @@ main > div:last-of-type a:last-of-type {
     /* top: 50%; */
 }
 
-main > div:last-of-type a:first-of-type h2, 
-main > div:last-of-type a:last-of-type h2 
+main > div:last-of-type a p 
 {
     color: #FFFFFF;
     font-family: var(--font);
@@ -223,11 +229,11 @@ footer div {
 	grid-template-areas: "phoneNum address    email"
 						 ".        social     .    "
 						 ".        copyright  .    ";
-	justify-items: center;
 	gap: 30px;
 	margin: 0 10px;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);        /* how do you add alt text to inline svg? */
+    text-align: center;
 }
 footer p:not(#copyright) {
 	font-size: 1.57rem;
@@ -297,6 +303,11 @@ footer p:not(#copyright) {
 	 footer p:not(#copyright) {
 		font-size: 1.3rem;
 	 }
+}
+@media (min-width:501px) {
+	header nav li {
+		opacity: 1 !important;
+	}
 }
 @media (max-width:785px) {  /* 785px and lower */
 	body {
@@ -401,14 +412,17 @@ footer p:not(#copyright) {
 		height: 25px;
 		float: right;
 		margin-top: 26px;
-		position: relative;
+		position: absolute;
+		top: 0;
+		left: 90%;
 		margin-right: 15px;
 		cursor: pointer;
+		z-index: 9999;
 	}
 	header > div span {
 		width: 100%;
 		display: block;
-		height: 5px;
+		height: 4px;
 		border-radius: 10px;
 		background-color: #fff;
 		position: absolute;
@@ -427,12 +441,25 @@ footer p:not(#copyright) {
 		height: 40px;
 	}
 	header nav ul {
-		display: flex;
 		flex-direction: column;
-		align-items: flex-end;
 		margin-left: auto;
-		background-color: #eb0909;
-		width: 35%;
-	  }
-	   
+		background-color: rgba(0, 0, 0, 0.65);
+		width: 50%;
+		position: fixed;
+		left: 101%;
+		height: 100%;
+		top: 0%;
+	}
+	.toggleNav {
+		transform: translateX(0);
+	}
+	.animate-menu-button {
+		position: fixed;
+	}
+	header nav ul :first-child {
+		margin-top: 3.75rem;
+	}
+	header nav  li {
+		padding-left: 1rem;
+	}
 }
