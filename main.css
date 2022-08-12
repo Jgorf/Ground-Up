@@ -33,6 +33,9 @@ header {
     border-radius: 11px;
     margin: 0 10px 0;
 }
+header > div {
+	display: none;
+}
 header a {
     padding-top: 30px;
 }
@@ -40,14 +43,15 @@ header nav ul {
     display: flex;
 }
 
-header nav li:first-child {
+header > a {
     padding-left: 40px;
-    padding-right: 0;
-	margin-right: auto;
 	padding-top: 15px;
+	display: inline-block;
 }
-
-header nav ul li:not(:first-child) {
+header nav {
+	float: right;
+}
+header nav ul li {
     padding-top: 32px;
 	display: inline-block;
 	padding-right: 30px;
@@ -65,15 +69,15 @@ header nav li a {
     color: #fff;
     font-family: var(--font);
     font-weight: var(--normal-weight);
-	font-size: 22px;
-	line-height: 30px;
+	font-size: 1.38rem;
+	line-height: 1.365;
 	
 }
 header nav li a:hover {
 	color: #f7e1a4;
 }
 header h1 {
-    font-size: 47px;
+    font-size: 2.95rem;
     font-family: var(--font);
     font-weight: var(--black-weight);
     line-height: 45px;
@@ -95,19 +99,19 @@ main > div:first-of-type {
     margin: 80px auto;
 }
 main > div:first-of-type h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-family: var(--font);
     font-weight: var(--black-weight);
     color: var(--text-color);
 	line-height: 55px;
 }
 main > div:first-of-type h2:last-of-type {
-    font-size: 38px;
+    font-size: 2.38rem;
 	line-height: 51.83px;
     font-weight: var(--semi-bold);
 }
 main > div:first-of-type p {
-    font-size: 25px;
+    font-size: 1.56rem;
     font-family: var(--font);
     font-weight: var(--semi-bold);
     color: #6B350E;
@@ -335,17 +339,24 @@ footer p:not(#copyright) {
 	 #wrapper {
 		padding-top: 0;
 	 }
-     header nav ul {
-		display: block;
-		text-align: center;
+     header nav {
+		display: flex;
+		justify-content: center;
+		float: none;
 	}
 	header nav li:last-child {
 		margin-right: 0;
 		padding-right: 0 !important;
 	}
-	header nav li:first-child {
+	header > a {
 		padding-left: 0;
+		padding-right: 0;
+		margin-right: auto;
+		padding-top: 15px;
+		display: flex;
+		justify-content: center;
 	}
+	
     main section {
         display: block !important;
      }
@@ -375,8 +386,53 @@ footer p:not(#copyright) {
 	}
 }
 @media (max-width:500px) {
+
 	main section span h2 {
 		text-align: left;
 		font-size: 1.6rem;
 	}
+	header > a {
+		padding-left: 15px;
+		display: inline-block;
+	}
+	header > div {
+		display: block;
+		width: 25px;
+		height: 25px;
+		float: right;
+		margin-top: 26px;
+		position: relative;
+		margin-right: 15px;
+		cursor: pointer;
+	}
+	header > div span {
+		width: 100%;
+		display: block;
+		height: 5px;
+		border-radius: 10px;
+		background-color: #fff;
+		position: absolute;
+	}
+	header > div span:first-of-type {
+		top: 6%;
+	}
+	header > div span:nth-of-type(2) {
+		top: 42%;
+	}
+	header > div span:last-of-type {
+		top: 80%;
+	}
+	#header-logo {
+		width: 175px;
+		height: 40px;
+	}
+	header nav ul {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-left: auto;
+		background-color: #eb0909;
+		width: 35%;
+	  }
+	   
 }
