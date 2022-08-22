@@ -1,0 +1,191 @@
+header {
+	background-image: linear-gradient(rgba(100, 42, 0, 0.54), rgba(88, 37, 1, 0.4)), url(../img/drink-header.jpg);
+	background-position: 0 center;
+	background-repeat: repeat-x;
+}
+header > div {
+	padding: 15% 2.5%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0 20rem;
+}
+header > div > h1 {
+	margin-bottom: 2.5rem;
+	padding-left: 1.25rem;
+	flex-basis: 100%;
+	font-size: 2.95rem;
+	font-weight: var(--black-weight);
+	line-height: 45px;
+	text-shadow: 0 6px #4A2409;
+}
+header > div a {
+	font-size: 1.5rem;
+	color: inherit;
+	border-radius: 35px;
+	background-color: rgba(136, 136, 136, 0.65);
+	position: relative;
+	overflow: hidden;
+}
+
+header > div a:focus-visible {
+	outline: 2px solid #ea855e;
+	outline-offset: 5px;
+}
+header div a::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 51%;
+	scale: 1.45;
+	overflow: hidden;
+	transition: transform 400ms;
+}
+header > div a:hover::before {
+	transform: scale(0);
+}
+header > div a:not(:last-of-type) {
+	padding: 1rem 3rem;
+	box-shadow: -4px 5px 7px black;
+}
+header > div a:not(:last-of-type)::before {
+	background-color: rgba(34, 200, 229, 0.65);
+}
+
+header > div a:last-of-type {
+	box-shadow: 4px 3px 6px black;
+	padding: 1rem 3.375rem;
+}
+header > div a:last-of-type::before {
+	background-color: rgba(247, 52, 94, 0.75);
+}
+header > div a p {
+	font-size: 1.5rem;
+	line-height: normal;
+	font-weight: normal;
+	text-shadow: none;
+	position: relative;
+}
+main section.drinks {
+	display: block;
+}
+main section.drinks:not(:nth-of-type(2)) {
+	border-bottom: 2px dotted black;
+}
+main section .menu-item {
+	display: flex;
+	gap: 1rem;
+	margin-left: 2rem;
+}
+main section .menu-item div  {
+	display: grid;
+	gap: 2.25rem 0;
+	grid-template-columns: max-content 1fr max-content;
+}
+main section .menu-item div span {
+	border-bottom: 4px dotted red;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 18px;
+	grid-column: 2 / -2;
+	grid-row: 1 / -2;
+}
+main section .menu-item div p,
+main section .menu-content h2 {
+	font-family: var(--font);
+	color: var(--text-color);
+}
+main section .menu-item div p:first-of-type,
+main section .menu-content h2 { 
+	font-weight: var(--black-weight);
+}
+main section .menu-content h2 {
+	margin-top: 2rem;
+	font-size: 2rem;
+}
+main section .menu-item div p:first-of-type {
+	font-size: 1.5rem;
+	align-self: end;
+	padding-right: 5px;
+}
+main section .menu-item div p:nth-of-type(2),
+main section .menu-item div p:last-of-type {
+	font-size: 1.2rem;
+}
+main section .menu-item div p:nth-of-type(2) {
+	grid-column: span 3;
+}
+main section .menu-item div p:last-of-type {
+	font-weight: var(--semi-bold);
+	grid-column: 3 / -1;
+	grid-row: 1 / -2;
+	align-self: end;
+	padding-left: 5px;
+}
+section img {
+	min-width: 6rem;
+	max-width: 25%;
+}
+@media (max-width:1060px) {
+	main section .menu-content h2 {
+		margin-bottom: 1rem;
+	}
+	main section .menu-item:not(:last-of-type) {
+		margin-bottom: 2rem;
+	}
+}
+@media (max-width: 785px) {
+	header {
+		background-position: -115px center;
+	}
+	header > div {
+		gap: 0 15rem;
+	}
+	header > div h1 {
+		padding-left: 0;
+	}
+	header > div a:not(:last-of-type) {
+		padding: 1rem 2rem;
+	}
+	header > div a:last-of-type {
+		padding: 1rem 2.375rem;
+		height: 60px;
+	}
+	main section {
+		text-align: left;
+		margin: 0 auto;
+		max-width: none;
+	}
+}
+@media (max-width: 558px) {
+	header {
+		background-position: 38% center;
+	}
+	header > div a:not(:last-of-type) {
+		margin-bottom: 1.5rem;
+	}
+}
+@media (max-width: 500px) {
+	header {
+		background-position: 37% center;
+	}
+	header > div a:not(:last-of-type) {
+		padding: .5rem 2rem;
+	}
+	header > div a:last-of-type {
+		padding: .5rem 2.38rem;
+		height: 44px;
+	}
+	main section .menu-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		margin-left: 1rem;
+	}
+	main section .menu-item:not(:last-of-type) {
+		margin-bottom: 0;
+	}
+	section img {
+		max-width: 50%;
+	}
+}
