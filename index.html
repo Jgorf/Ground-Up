@@ -7,13 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=auto" rel="stylesheet">
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="css/main.css"/>
   </head>
   <body>
     <div id="wrapper">
       <header>
         <a href="index.html">
-          <svg id="header-logo" width="224" height="46" viewBox="0 0 224 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg id="header-logo" width="224" height="46" viewBox="0 0 224 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ground-up-logo" role="img">
+            <title id="ground-up-logo">Ground Up</title>
             <path d="M10.0926 40.4311C11.1858 40.4569 12.2757 40.3005 13.3175 39.9683V36.9823H8.27117V33.2051H16.9156V42.5213C14.7441 43.5687 12.3533 44.0806 9.94332 44.0143C4.31474 44.0293 0 40.2818 0 33.8769C0 28.6514 3.28458 23.7246 9.22668 23.7246C10.8242 23.6782 12.4069 24.0423 13.8236 24.782C15.2403 25.5217 16.4437 26.6124 17.3187 27.9497L14.5567 30.5326C12.9592 28.2185 11.4214 27.3675 9.2864 27.3675C5.83759 27.3675 3.82206 30.6073 3.82206 33.8918C3.77265 34.7408 3.89894 35.5908 4.19304 36.3887C4.48714 37.1866 4.94272 37.9152 5.53127 38.529C6.11983 39.1427 6.8287 39.6285 7.61356 39.9558C8.39841 40.2831 9.24236 40.4449 10.0926 40.4311V40.4311Z" fill="white"/>
             <path d="M34.2193 43.656L29.4119 36.5494H26.4259V43.656H22.7681V24.0978H30.5764C34.5776 24.0978 37.474 26.2776 37.474 30.0698C37.4979 31.3594 37.1036 32.6222 36.35 33.6691C35.5965 34.716 34.5242 35.4908 33.2937 35.8775L38.6983 43.656H34.2193ZM30.5167 27.8452H26.3662V32.7721H30.3375C32.5173 32.7721 33.652 31.9062 33.652 30.0996C33.652 28.5619 32.5472 27.8452 30.5167 27.8452Z" fill="white"/>
             <path d="M40.9531 33.847C40.9531 28.4723 44.7005 23.7245 50.4187 23.7245C56.1368 23.7245 59.8395 28.532 59.8395 33.9067C59.8395 39.2815 56.0921 44.0292 50.4187 44.0292C44.7453 44.0292 40.9531 39.2069 40.9531 33.847ZM56.0025 33.847C56.0025 30.3684 54.0019 27.2629 50.4187 27.2629C46.8355 27.2629 44.7901 30.3534 44.7901 33.847C44.7901 37.3406 46.8206 40.4311 50.4187 40.4311C54.0168 40.4311 56.0025 37.3854 56.0025 33.9067V33.847Z" fill="white"/>
@@ -31,19 +32,22 @@
             <path d="M165.871 26.203H142.297C142.099 26.2017 141.903 26.248 141.727 26.3378C141.55 26.4276 141.398 26.5584 141.282 26.7193C141.167 26.8801 141.092 27.0663 141.063 27.2622C141.034 27.4581 141.053 27.658 141.117 27.8453L141.864 29.8757C144.85 37.3407 148.851 41.0433 154.076 41.0433C159.302 41.0433 163.303 37.4004 166.304 29.8757C166.588 29.2039 166.827 28.5171 167.05 27.8453C167.115 27.658 167.133 27.4581 167.105 27.2622C167.076 27.0663 167.001 26.8801 166.885 26.7193C166.77 26.5584 166.617 26.4276 166.441 26.3378C166.264 26.248 166.069 26.2017 165.871 26.203V26.203Z" fill="white"/>
           </svg>
         </a>
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="http://www.example.com">Drinks</a></li>
-            <li><a href="http://www.example.com">Food</a></li>
-            <li><a href="http://www.example.com">About Us</a></li>
+        <button class="btn-obj" aria-controls="primary-navigation" aria-expanded="false">
+		      <span class="sr-only btn-obj">Menu</span>
+          <span class="btn-obj" id="top-bar"></span>
+          <span class="btn-obj" id="mid-bar"></span>
+          <span class="btn-obj" id="bottom-bar"></span>
+        </button>
+        <nav class="nav-obj" id="primary-navigation">
+          <ul class="nav-obj">
+            <li class="nav-obj"><a href="drinks.html" class="nav-obj">Drinks</a></li>
+            <li class="nav-obj"><a href="food.html" class="nav-obj">Food</a></li>
+            <li class="nav-obj"><a href="about.html" class="nav-obj">About Us</a></li>
           </ul>
         </nav>
-        <p>No highfalutin coffee snobbery, just good coffee</p>
+        <div>
+          <p>No highfalutin coffee snobbery, just good coffee</p>
+        </div>
       </header>
       
       <main>
@@ -76,10 +80,10 @@
         </section>
         <span><img src="img/coffee-shop-sign.png" alt=""></span>
           <div>
-            <a href="http://www.example.com">
+            <a href="drinks.html">
               <p class="drink-menu">Drink Menu</p>
             </a>
-            <a href="http://www.example.com">
+            <a href="food.html">
               <p class="food-menu">Food Menu</p>
             </a>
           </div>
@@ -89,7 +93,7 @@
           <p id="address">57 Grand Street, Brookyln, NY</p>
           <p id="phone-number">718-285-6250</p>
           <p id="email">hello@groundup.com</p>
-          <ul class="socials">
+          <div class="socials">
             <a href="http://www.facebook.com" target="_blank">
               <svg class="social-icon" width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fbAlt" role="img">
                 <title id="fbAlt">facebook link</title>
@@ -126,7 +130,7 @@
                   <path clip-rule="evenodd" d="M25.7055 19.5099C25.7055 22.6589 23.1441 25.2226 19.9935 25.2226C16.8429 25.2226 14.2815 22.6589 14.2815 19.5099C14.2815 18.7505 14.4329 18.0286 14.7006 17.3652H11.582V25.9195C11.582 27.0231 12.4803 27.9206 13.5838 27.9206H26.4024C27.5059 27.9206 28.4027 27.0231 28.4027 25.9195V17.3652H25.2825C25.5541 18.0286 25.7055 18.7513 25.7055 19.5099Z"/>
               </svg>
             </a>
-          </ul>
+          </div>
           <p id="copyright">Copyright © Ground Up</p>
         </div>
       </footer>
